@@ -15,7 +15,7 @@ docker pull jacobkl/staticjinjaplus
 docker pull jacobkl/staticjinjaplus:latest
 ```
 
-## Based on python:3.8-slim
+## Based on python:3.9-slim
 
 ### Latest Version on python:3.9-slim
 ```sh
@@ -45,7 +45,7 @@ docker pull jacobkl/staticjinjaplus:latest-ubuntu
 docker pull jacobkl/staticjinjaplus:0.1.0-ubuntu
 ```
 
-### Version 0.1.0 on ubuntu:24.04
+### Version 0.1.1 on ubuntu:24.04
 
 ```sh
 docker pull jacobkl/staticjinjaplus:0.1.1-ubuntu
