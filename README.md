@@ -53,14 +53,14 @@ docker pull jacobkl/staticjinjaplus:0.1.1-ubuntu
 ## Run
 
 ```sh
-docker run --rm -v "path/for/your/templates:/app/templates" -v "path/for/your/build:/app/build" push your_dockerhub_username/staticjinjaplus:<tag> -w
+docker run --rm -v "path/for/your/templates:/app/templates" -v "path/for/your/build:/app/build" your_dockerhub_username/staticjinjaplus:<tag> -w
 ```
 
 ## To build and push your own image, you can use the following commands:
 You can modify the Dockerfile if you need different settings.
 
 ```sh
-docker build -t push your_dockerhub_username/staticjinjaplus:<tag> -f path/for/your/Dockerfile path/for/your/repository_with_Dockerfile
+docker build -t your_dockerhub_username/staticjinjaplus:<tag> -f path/for/your/Dockerfile path/for/your/repository_with_Dockerfile
 ```
 ```sh
 docker push your_dockerhub_username/staticjinjaplus:<tag>
