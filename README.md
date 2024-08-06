@@ -5,7 +5,7 @@
 You can modify the Dockerfile if you need different settings.
 
 ```sh
-docker build -t your_dockerhub_username/staticjinjaplus:<tag> -f path/for/your/Dockerfile .
+docker build -t your_dockerhub_username/staticjinjaplus:<tag> -f path/for/your/Dockerfile path/for/your/repository_with_Dockerfile
 ```
 ```sh
 docker push your_dockerhub_username/staticjinjaplus:<tag>
