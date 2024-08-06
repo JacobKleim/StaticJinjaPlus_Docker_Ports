@@ -22,8 +22,7 @@ curl -sL https://github.com/MrDave/StaticJinjaPlus/archive/refs/tags/0.1.0.tar.g
 ```
 
 ```sh
-docker build --build-arg VERSION=<required_version> --build-arg CHECKSUM=<hash_sum> -t your_dockerhub_username/staticjinjaplus:<tag>
--f path/for/your/Dockerfile .
+docker build --build-arg VERSION=<required_version> --build-arg CHECKSUM=<hash_sum> -t your_dockerhub_username/staticjinjaplus:<tag> -f path/for/your/Dockerfile .
 ```
 
 ## By default, images with version are built with version `0.1.1`, because the corresponding arguments are specified in the docker file.
