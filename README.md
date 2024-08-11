@@ -41,7 +41,56 @@ docker build -t your_dockerhub_username/staticjinjaplus:0.1.1-python -f 0.1/pyth
 docker build -t your_dockerhub_username/staticjinjaplus:latest -f develop/python/Dockerfile .
 ```
 
-## Run
+## Build images for development:
+```sh
+docker build -t your_dockerhub_username/staticjinjaplus:develop -f develop/ubuntu/Dockerfile .
+```
+## Building a slim image for development:
+```sh
+docker build -t your_dockerhub_username/staticjinjaplus:develop-slim -f develop/python/Dockerfile .
+```
+
+## Build image version 0.1.0:
+```sh
+docker build --build-arg VERSION=0.1.0 --build-arg CHECKSUM=$(curl -sL https://github.com/MrDave/StaticJinjaPlus/archive/refs/tags/0.1.0.tar.gz | sha256sum | awk '{print $1}') -t your_dockerhub_username/staticjinjaplus:0.1.0 -f 0.1/ubuntu/Dockerfile .
+```
+## Build slim-image version 0.1.0:
+```sh
+docker build --build-arg VERSION=0.1.0 --build-arg CHECKSUM=$(curl -sL https://github.com/MrDave/StaticJinjaPlus/archive/refs/tags/0.1.0.tar.gz | sha256sum | awk '{print $1}') -t your_dockerhub_username/staticjinjaplus:0.1.0-slim -f 0.1/python/Dockerfile .
+```
+## Build image version 0.1.1:
+```sh
+docker build --build-arg VERSION=0.1.1 --build-arg CHECKSUM=$(curl -sL https://github.com/MrDave/StaticJinjaPlus/archive/refs/tags/0.1.1.tar.gz | sha256sum | awk '{print $1}') -t your_dockerhub_username/staticjinjaplus:0.1.1 -f 0.1/ubuntu/Dockerfile .
+```
+## Build slim-image version 0.1.1:
+```sh
+docker build --build-arg VERSION=0.1.1 --build-arg CHECKSUM=$(curl -sL https://github.com/MrDave/StaticJinjaPlus/archive/refs/tags/0.1.1.tar.gz | sha256sum | awk '{print $1}') -t your_dockerhub_username/staticjinjaplus:0.1.1-slim -f 0.1/python/Dockerfile .
+```
+
+## Building the latest image:
+```sh
+docker build --build-arg VERSION=0.1.1 --build-arg CHECKSUM=$(curl -sL https://github.com/MrDave/StaticJinjaPlus/archive/refs/tags/0.1.1.tar.gz | sha256sum | awk '{print $1}') -t your_dockerhub_username/staticjinjaplus:latest -f 0.1/ubuntu/Dockerfile .
+```
+
+## Build slim-image for the latest version:
+```sh
+docker build --build-arg VERSION=0.1.1 --build-arg CHECKSUM=$(curl -sL https://github.com/MrDave/StaticJinjaPlus/archive/refs/tags/0.1.1.tar.gz | sha256sum | awk '{print $1}') -t your_dockerhub_username/staticjinjaplus:slim -f 0.1/python/Dockerfile .
+``` 
+
+## Run the following commands to upload the built images to Docker Hub:
+
+```sh
+docker push your_dockerhub_username/staticjinjaplus:develop
+docker push your_dockerhub_username/staticjinjaplus:develop-slim
+docker push your_dockerhub_username/staticjinjaplus:0.1.0
+docker push your_dockerhub_username/staticjinjaplus:0.1.0-slim
+docker push your_dockerhub_username/staticjinjaplus:0.1.1
+docker push your_dockerhub_username/staticjinjaplus:0.1.1-slim
+docker push your_dockerhub_username/staticjinjaplus:latest
+docker push your_dockerhub_username/staticjinjaplus:slim
+```
+
+## Run test
 
 **If you want to test the collected image, run this command:**
 

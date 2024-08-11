@@ -9,10 +9,10 @@ ADD --checksum=sha256:${CHECKSUM} https://github.com/MrDave/StaticJinjaPlus/arch
 
 RUN tar xzf /tmp/app.tar.gz --strip-components=1 -C /app && rm /tmp/app.tar.gz
 
-RUN python3 -m venv venv
-RUN . venv/bin/activate
-RUN pip install --upgrade pip 
-RUN pip install -r requirements.txt --no-cache-dir
+RUN python3 -m venv venv && \
+    . venv/bin/activate && \
+    pip install --upgrade pip && \
+    pip install -r requirements.txt --no-cache-dir
 
 ENTRYPOINT ["python3", "main.py", "-w"]
 
