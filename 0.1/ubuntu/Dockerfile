@@ -20,6 +20,6 @@ RUN python3 -m venv venv && \
     pip install --upgrade pip && \
     pip install -r requirements.txt --no-cache-dir
 
-ENTRYPOINT ["/app/venv/bin/python3", "main.py", "-w"]
+ENTRYPOINT ["/app/venv/bin/python3", "main.py"]
 
 CMD ["--srcpath=/app/templates/", "--outpath=/app/build/"]
